@@ -1,0 +1,8 @@
+{
+  "weights": [
+    { "date": "2026-08-27", "cat": "Desi", "lbs": 9.0, "note": "Approximate — replace with real weigh-ins" },
+    { "date": "2026-08-27", "cat": "Lucy", "lbs": 8.0, "note": "Approximate — replace with real weigh-ins" },
+    { "date": "2026-01-15", "cat": "Desi", "lbs": 5.4, "note": "Approximate — replace with real weigh-ins" },
+    { "date": "2026-01-15", "cat": "Lucy", "lbs": 5.0, "note": "Approximate — replace with real weigh-ins" }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Lucy & Desi",
+  "short_name": "Lucy & Desi",
+  "description": "Two cats living their best lives in Napa, California.",
+  "start_url": "index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F5F0F8",
+  "theme_color": "#F5F0F8",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

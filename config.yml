@@ -1,0 +1,171 @@
+# Lucy & Desi — CMS configuration (Sveltia CMS)
+# This file tells the admin panel what content exists and how to edit it.
+
+backend:
+  name: github
+  repo: mstopka-viber/lucy-desi-kittens
+  branch: main
+
+app_title: Lucy & Desi
+
+# Photos uploaded through the admin panel are saved here.
+media_folder: /uploads
+public_folder: /uploads
+
+media_libraries:
+  default:
+    config:
+      slugify_filename: true
+      # Phone photos are huge; shrink them on upload so the site stays fast.
+      transformations:
+        raster_image:
+          format: webp
+          quality: 82
+          width: 2000
+          height: 2000
+
+singletons:
+  - name: photos
+    label: Photos
+    icon: photo_library
+    file: photos.json
+    fields:
+      - name: photos
+        label: Photos
+        label_singular: Photo
+        widget: list
+        add_to_top: true
+        summary: "{{fields.caption}} ({{fields.who}})"
+        thumbnail: image
+        fields:
+          - { name: image, label: Photo, widget: image, required: true }
+          - { name: caption, label: Caption, widget: string, required: false }
+          - name: who
+            label: Who is in it
+            widget: select
+            options: [Lucy, Desi, Both]
+            default: Both
+          - name: date
+            label: Date taken
+            widget: datetime
+            type: date
+            format: YYYY-MM-DD
+            default: "{{now}}"
+
+  - name: posts
+    label: Blog
+    icon: article
+    file: posts.json
+    fields:
+      - name: posts
+        label: Blog posts
+        label_singular: Post
+        widget: list
+        add_to_top: true
+        summary: "{{fields.title}} — {{fields.date}}"
+        collapsed: true
+        fields:
+          - { name: title, label: Title, widget: string, required: true }
+          - name: date
+            label: Date
+            widget: datetime
+            type: date
+            format: YYYY-MM-DD
+            default: "{{now}}"
+          - name: who
+            label: Who it's about
+            widget: select
+            options: [Lucy, Desi, Both]
+            default: Both
+          - name: summary
+            label: Short summary
+            widget: text
+            required: false
+            hint: One or two sentences shown on the blog list and home page.
+          - name: body
+            label: Post
+            widget: markdown
+            required: true
+          - name: image
+            label: Photo (optional)
+            widget: image
+            required: false
+
+  - name: milestones
+    label: Milestones
+    icon: flag
+    file: milestones.json
+    fields:
+      - name: milestones
+        label: Milestones
+        label_singular: Milestone
+        widget: list
+        add_to_top: true
+        summary: "{{fields.date}} — {{fields.title}}"
+        collapsed: true
+        fields:
+          - { name: title, label: Title, widget: string, required: true }
+          - name: date
+            label: Date
+            widget: datetime
+            type: date
+            format: YYYY-MM-DD
+            default: "{{now}}"
+          - name: who
+            label: Who
+            widget: select
+            options: [Lucy, Desi, Both]
+            default: Both
+          - { name: description, label: Description, widget: text, required: false }
+          - { name: image, label: Photo (optional), widget: image, required: false }
+
+  - name: weights
+    label: Weigh-ins
+    icon: monitor_weight
+    file: weights.json
+    fields:
+      - name: weights
+        label: Weigh-ins
+        label_singular: Weigh-in
+        widget: list
+        add_to_top: true
+        summary: "{{fields.date}} — {{fields.cat}}: {{fields.lbs}} lb"
+        collapsed: true
+        fields:
+          - name: date
+            label: Date
+            widget: datetime
+            type: date
+            format: YYYY-MM-DD
+            default: "{{now}}"
+          - name: cat
+            label: Cat
+            widget: select
+            options: [Lucy, Desi]
+            required: true
+          - name: lbs
+            label: Weight (lb)
+            widget: number
+            value_type: float
+            min: 0
+            step: 0.1
+            required: true
+            hint: Decimals are fine, e.g. 9.4
+          - { name: note, label: Note (optional), widget: string, required: false }
+
+  - name: site
+    label: Site settings
+    icon: settings
+    file: site.json
+    fields:
+      - { name: tagline, label: Home page tagline, widget: string }
+      - { name: intro, label: Home page intro, widget: text }
+      - { name: lucy_blurb, label: Lucy — one-liner, widget: string }
+      - { name: desi_blurb, label: Desi — one-liner, widget: string }
+      - name: birthday
+        label: Birthday
+        widget: datetime
+        type: date
+        format: YYYY-MM-DD
+        hint: Used to show their age. Approximate is fine.
+      - { name: location, label: Location (shown in footer), widget: string }

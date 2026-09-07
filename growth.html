@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Adventures, observations, and general cat chaos from Napa, California." />
+  <meta name="description" content="Weight over time for Lucy and Desi." />
   <meta name="theme-color" content="#F5F0F8" />
-  <title>Lucy & Desi — Blog</title>
+  <title>Lucy & Desi — Growth</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="icon-192.png" type="image/png" />
@@ -14,7 +14,7 @@
   <meta name="apple-mobile-web-app-title" content="Lucy & Desi" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 </head>
-<body data-page="blog">
+<body data-page="growth">
 
   <nav class="site-nav" aria-label="Main navigation">
     <div class="nav-inner">
@@ -36,14 +36,17 @@
 
   <main>
     <section class="hero" style="padding-bottom: var(--space-md);">
-      <div class="hero-eyebrow">Life with two cats</div>
-      <h1>The Blog</h1>
-      <p class="hero-intro">Adventures, observations, and general cat chaos. Reported from Napa, California.</p>
+      <div class="hero-eyebrow">Growing up</div>
+      <h1>Growth</h1>
+      <p class="hero-intro">How Lucy and Desi have grown, one weigh-in at a time.</p>
+      <p class="age-line"><span data-site="age"></span></p>
     </section>
 
-    <section class="section-light">
+    <section class="section-card">
       <div class="container">
-        <div class="blog-list" id="posts"></div>
+        <div class="weight-cards mb-md" id="growth-summary"></div>
+        <div class="chart-card mb-md" id="growth-chart"></div>
+        <div id="growth-table"></div>
       </div>
     </section>
 

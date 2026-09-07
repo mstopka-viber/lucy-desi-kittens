@@ -1,36 +1,34 @@
-# Lucy & Desi 🐱🐱
+# Lucy & Desi
 
-A cozy little website for two domestic shorthair kittens living their best lives in Napa, California.
+A cozy website for two domestic shorthair cats in Napa, California.
+
+## How it works
+
+- Plain HTML, CSS, and JavaScript. No build step.
+- All content lives in five JSON files at the root of the repo:
+  `photos.json`, `posts.json`, `milestones.json`, `weights.json`, `site.json`.
+- The pages read those files and render them. Edit the JSON and the site changes.
+- The admin panel at `/admin` (Sveltia CMS) edits those files for you and commits
+  them to GitHub. Netlify redeploys automatically after every save.
+- Photos uploaded through the admin panel are saved in `/uploads`.
 
 ## Pages
 
-- **Home** (`index.html`) — Meet Lucy and Desi, latest photos and blog previews
-- **Photos** (`gallery.html`) — Full photo gallery
-- **Blog** (`blog.html`) — Adventures and updates
-- **Milestones** (`milestones.html`) — The big moments, in order
+| Page | File | Content source |
+| --- | --- | --- |
+| Home | `index.html` | all five files |
+| Photos | `gallery.html` | `photos.json` |
+| Blog | `blog.html`, `post.html` | `posts.json` |
+| Milestones | `milestones.html` | `milestones.json` |
+| Growth | `growth.html` | `weights.json` |
+| Admin | `admin.html` + `config.yml` | — |
 
-## Stack
+## Editing content
 
-Plain HTML, CSS, and JavaScript. No frameworks, no build step. Deployed via Vercel.
+Go to `https://<your-site>/admin`, sign in with GitHub, pick a section, add or
+delete entries, and click Save. The site updates within a minute or two.
 
-## Adding photos
+## Phone
 
-Replace placeholder `<div class="gallery-item">` blocks with real images:
-
-```html
-<div class="gallery-item">
-  <img src="images/your-photo.jpg" alt="Description of photo" />
-</div>
-```
-
-## Adding blog posts
-
-Copy an existing `.blog-card` block in `blog.html` and update the date, tag, title, and content.
-
-## Adding milestones
-
-Copy an existing `.timeline-item` block in `milestones.html` and update the date and content.
-
----
-
-Built with Claude · Deployed on Vercel
+Open the site in your phone's browser and choose "Add to Home Screen". It
+installs like an app.
