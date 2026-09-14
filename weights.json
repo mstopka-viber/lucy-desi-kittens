@@ -1,9 +1,9 @@
 {
   "weights": [
     {
-      "date": "2025-09-01",
-      "cat": "Desi",
-      "lbs": 3.7,
+      "date": "2025-09-17",
+      "cat": "Lucy",
+      "lbs": 4.1,
       "note": ""
     },
     {
@@ -35,6 +35,12 @@
       "cat": "Lucy",
       "lbs": 5,
       "note": "Approximate — replace with real weigh-ins"
+    },
+    {
+      "date": "2025-09-01",
+      "cat": "Desi",
+      "lbs": 3.7,
+      "note": ""
     },
     {
       "date": "2025-09-01",
