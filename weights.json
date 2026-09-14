@@ -1,6 +1,12 @@
 {
   "weights": [
     {
+      "date": "2025-09-01",
+      "cat": "Lucy",
+      "lbs": 3.1,
+      "note": "First day at Idlewild"
+    },
+    {
       "date": "2026-09-06",
       "cat": "Desi",
       "lbs": 9.4,
