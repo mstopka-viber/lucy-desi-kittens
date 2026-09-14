@@ -2,9 +2,9 @@
   "weights": [
     {
       "date": "2025-09-01",
-      "cat": "Lucy",
-      "lbs": 3.1,
-      "note": "First day at Idlewild"
+      "cat": "Desi",
+      "lbs": 3.7,
+      "note": ""
     },
     {
       "date": "2026-09-06",
@@ -35,6 +35,12 @@
       "cat": "Lucy",
       "lbs": 5,
       "note": "Approximate — replace with real weigh-ins"
+    },
+    {
+      "date": "2025-09-01",
+      "cat": "Lucy",
+      "lbs": 3.1,
+      "note": "First day at Idlewild"
     }
   ]
 }
