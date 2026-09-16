@@ -2,6 +2,12 @@
   "weights": [
     {
       "date": "2026-08-25",
+      "cat": "Desi",
+      "lbs": 9.3,
+      "note": ""
+    },
+    {
+      "date": "2026-08-25",
       "cat": "Lucy",
       "lbs": 8.5,
       "note": ""
